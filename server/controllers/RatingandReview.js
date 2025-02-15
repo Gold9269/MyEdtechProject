@@ -1,4 +1,4 @@
-const RatingAndReview = require("../models/RatingandReview")
+const RatingandReview = require("../models/RatingandReview")
 const Course = require("../models/Course")
 const mongoose = require("mongoose")
 
@@ -108,7 +108,7 @@ exports.getAverageRating = async (req, res) => {
 // Get all rating and reviews
 exports.getAllRatingReview = async (req, res) => {
   try {
-    const allReviews = await RatingAndReview.find({})
+    const allReviews = await RatingandReview.find({})
       .sort({ rating: "desc" })
       .populate({
         path: "user",

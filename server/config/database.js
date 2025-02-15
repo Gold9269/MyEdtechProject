@@ -6,8 +6,10 @@ const { MONGODB_URL } = process.env;
 exports.connect = () => {
 	mongoose
 		.connect(MONGODB_URL, {
-			useNewUrlparser: true,
+			useNewUrlParser: true,
 			useUnifiedTopology: true,
+			serverSelectionTimeoutMS: 30000,
+			socketTimeoutMS: 45000, 
 		})
 		.then(console.log(`DB Connection Success`))
 		.catch((err) => {

@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin: "https://my-mega-project-01-frontend.vercel.app/",
+		origin: process.env.CLIENT_URL || "http://localhost:3000",
 		credentials: true,
 	})
 );
